@@ -14,6 +14,10 @@ export const ContainerCards = styled.div`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+
+  @media (max-width: 363px){
+    justify-content: center;
+  }
 `
 
 export const AmountBrawlers = styled.span`

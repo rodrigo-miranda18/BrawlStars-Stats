@@ -111,6 +111,7 @@ export const Club = styled.div`
   display: flex;
   align-items: center;
   margin-top: 20px;
+  cursor: pointer;
 `
 
 export const ClubIcon = styled.img`

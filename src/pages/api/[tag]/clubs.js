@@ -6,13 +6,13 @@ export default async (req,res) => {
     }
   }
 
-  const url = "https://api.brawlstars.com/v1/brawlers"
+  const url = "https://api.brawlstars.com/v1/clubs/%23"+req.query.tag
 
   try{
     const response = await (await fetch(url,config)).json()
 
-    return res.send(response)
+    return res.status(200).send(response)
   }catch(err){
-    return res.send(err)
+    return res.status(404).send(err)
   }
 }

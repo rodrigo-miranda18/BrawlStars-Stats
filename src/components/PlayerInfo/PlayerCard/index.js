@@ -1,6 +1,7 @@
 import {useContext} from "react"
 import ExperienceBar from "../ExperienceBar"
 import {DataContext} from "../../../context/DataContext" 
+import Link from "next/link"
 import {
   Card,
   LeftSide,
@@ -20,8 +21,14 @@ import {
 } from "./styles.js"
 
 const PlayerCard = () => {
-  const {playerData} = useContext(DataContext)
+  const {playerData,setClubData} = useContext(DataContext)
   const highestTrophiesBrawler = playerData.tag ? playerData.brawlers.sort((a,b) => b.trophies-a.trophies) : []
+
+  const handleClick = async () => {
+    const tagClub = playerData.club.tag.replace("#","")
+    const response = await (await fetch("/api/"+tagClub+"/clubs")).json()
+    setClubData(response)
+  }
 
   return(
       <Card>
@@ -38,10 +45,12 @@ const PlayerCard = () => {
           </AvatarPerfil>
           <TagName>{playerData.tag}</TagName>
           <ExperienceBar expLevel={playerData.expLevel}/>
-          <Club>
-            <ClubIcon src="/img/cla-icon.png"/>
-            <ClubName>{!playerData.club.name ? "NO CLUB" : playerData.club.name}</ClubName>
-          </Club>
+          <Link href="/clubs">
+            <Club onClick={handleClick}>
+              <ClubIcon src="/img/cla-icon.png"/>
+              <ClubName>{!playerData.club.name ? "NO CLUB" : playerData.club.name}</ClubName>
+            </Club>
+          </Link>
         </LeftSide>
         <RightSide>
           <MainBrawlerImage image={highestTrophiesBrawler[0].id}/>
