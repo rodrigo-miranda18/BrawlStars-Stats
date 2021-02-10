@@ -38,8 +38,8 @@ const Header = () => {
           <Link href="/">Players</Link>
         </LinkContainer>
         <LinkContainer>
-          <Icon src="/img/Star_Points.png"/>
-          <Link href="/brawlers">Brawlers</Link>
+          <Icon src="/img/cla-icon.png"/>
+          <Link href="/clubs">Clubs</Link>
         </LinkContainer>
         <LinkContainer>
           <Icon src="/img/ranking.png"/>
