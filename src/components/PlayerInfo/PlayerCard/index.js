@@ -46,7 +46,7 @@ const PlayerCard = () => {
           <TagName>{playerData.tag}</TagName>
           <ExperienceBar expLevel={playerData.expLevel}/>
           <Link href="/clubs">
-            <Club onClick={handleClick}>
+            <Club onClick={() => !playerData.club.name?"":handleClick()}>
               <ClubIcon src="/img/cla-icon.png"/>
               <ClubName>{!playerData.club.name ? "NO CLUB" : playerData.club.name}</ClubName>
             </Club>
