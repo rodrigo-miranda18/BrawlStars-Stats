@@ -1,4 +1,4 @@
-import {Container} from "./styles.js"
+import {Container} from "../../styles/containerContentPages" 
 import ClubFinder from "../ClubFinder"
 import ClubInfo from "../ClubInfo"
 

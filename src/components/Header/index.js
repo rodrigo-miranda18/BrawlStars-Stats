@@ -43,7 +43,7 @@ const Header = () => {
         </LinkContainer>
         <LinkContainer>
           <Icon src="/img/ranking.png"/>
-          <Link href="/ranking">Ranking</Link>
+          <Link href="/ranking/players">Ranking</Link>
         </LinkContainer>
       </RightSide>
       <HiddenIcon>
