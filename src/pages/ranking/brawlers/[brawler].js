@@ -15,7 +15,7 @@ export const getStaticPaths = async () => {
 
   return{
     paths:brawlersIds,
-    fallback:false
+    fallback:"blocking"
   }
 }
 
