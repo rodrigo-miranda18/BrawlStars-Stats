@@ -1,9 +1,7 @@
-<div style="display: flex;justify-content: center;">
-  <img width="35px" src="./public/img/star-2.png"/>
-  <span style="font-size: 23px;margin-left: 5px">
+<h1 align="center">
+    <img width="34px" src="./public/img/star-2.png"/>
     Brawl Stars Stats
-  </span>
-</div>
+</h1>
 
 <hr>
 
@@ -18,7 +16,7 @@ O usuário consegue buscar por dados de sua conta , obtendo o número de troféu
 <img src="./public/github/find-player.gif"/>
 
 <br>
-<br>
+
 Além disso o usuário pode buscar por Clubes também , obtendo a quantidade de troféus assim como todos seus membros .
 
 <br>
@@ -26,7 +24,6 @@ Além disso o usuário pode buscar por Clubes também , obtendo a quantidade de 
 
 <img src="./public/github/find-club.gif"/>
 
-<br>
 <br>
 
 Na aba Ranking , é possível visualizar o maior número de troféus da season dos Players , dos Clubes , e dos Brawlers .
@@ -38,7 +35,6 @@ Ranking e Clubs :
 <img src="./public/github/ranking-player-club.gif">
 
 <br>
-<br>
 
 Brawlers :
 
@@ -46,7 +42,6 @@ Brawlers :
 
 <img src="./public/github/ranking-brawlers.gif">
 
-<br>
 <br>
 
 A api utilizada neste projeto foi a <a href="https://developer.brawlstars.com/#/">Brawl Stars API</a> .
