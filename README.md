@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img width="34px" src="./public/img/star-2.png"/>
+    <img width="34px" src="./public/img/star-3.png"/>
     Brawl Stars Stats
 </h1>
 
