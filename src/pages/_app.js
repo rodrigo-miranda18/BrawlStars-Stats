@@ -1,13 +1,17 @@
 import GlobalStyle from "../styles/global"
-import {DataProvider} from "../context/DataContext"
+import { Container } from "../styles/app"
+
+import Layout from "../components/Layout"
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <DataProvider>
-        <Component {...pageProps} />
-      </DataProvider>
+      <Layout>
+        <Container>
+          <Component {...pageProps} />
+        </Container>
+      </Layout>
     </>
   )
 }

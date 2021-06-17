@@ -1,5 +1,3 @@
-import {useContext} from "react"
-import {DataContext} from "../../context/DataContext"
 import {
   Card,
   Info,
@@ -19,26 +17,23 @@ import {
   IconTrophies,
   AmountTrophies,
   Name,
-  NameType
+  NameType,
 } from "./styles.js"
 
-const ClubCard = () => {
-  const {clubData} = useContext(DataContext)
-
-  return(
+const ClubCard = ({ clubData }) => {
+  return (
     <>
-      {
-        clubData.tag &&
+      {clubData.tag && (
         <Card>
           <Info>
             <LeftSide>
-              <Logo src="/img/cla-icon.png"/>
+              <Logo src="/img/cla-icon.png" />
               <Tag>{clubData.tag}</Tag>
             </LeftSide>
             <RightSide>
               <Title>{clubData.name}</Title>
               <Trophies>
-                <Icon src="/img/ranking.png"/>
+                <Icon src="/img/ranking.png" />
                 <Value>{clubData.trophies}</Value>
               </Trophies>
             </RightSide>
@@ -46,7 +41,7 @@ const ClubCard = () => {
           <Main>
             <RequiredTrophies>
               <Amount>
-                <IconTrophies src="/img/ranking.png"/>
+                <IconTrophies src="/img/ranking.png" />
                 <AmountTrophies>{clubData.requiredTrophies}</AmountTrophies>
               </Amount>
               <Name>Required Trophies</Name>
@@ -58,7 +53,7 @@ const ClubCard = () => {
             <Description>{clubData.description}</Description>
           </Main>
         </Card>
-      }
+      )}
     </>
   )
 }
