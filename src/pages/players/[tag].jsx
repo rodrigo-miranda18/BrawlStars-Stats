@@ -2,16 +2,17 @@ import api from "../../services/api"
 
 import PlayerInfo from "../../components/PlayerInfo"
 import PlayerBrawlers from "../../components/PlayerBrawlers"
+import ErrorPage from "../../components/ErrorPage"
 
-const PlayerPerfil = ({ playerData }) => {
+const PlayerPerfil = ({ playerData, amountBrawlers }) => {
   if (!playerData) {
-    return <></>
+    return <ErrorPage />
   }
 
   return (
     <>
       <PlayerInfo playerData={playerData} />
-      <PlayerBrawlers playerData={playerData} />
+      <PlayerBrawlers amountBrawlers={amountBrawlers} playerData={playerData} />
     </>
   )
 }
@@ -20,18 +21,21 @@ export const getServerSideProps = async ctx => {
   const { tag } = ctx.params
 
   try {
-    const response = await api.get(`players/%23${tag}`)
-    const playerData = response.data
+    const { data: playerData } = await api.get(`players/%23${tag}`)
+    const { data } = await api.get(`brawlers`)
+    const amountBrawlers = data.items.length
 
     return {
       props: {
         playerData,
+        amountBrawlers,
       },
     }
   } catch (err) {
     return {
       props: {
         playerData: null,
+        amountBrawlers: null,
       },
     }
   }

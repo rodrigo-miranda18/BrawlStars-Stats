@@ -1,14 +1,10 @@
 import BrawlerCard from "../BrawlerCard"
 import { Container, ContainerCards, AmountBrawlers, Number } from "./styles.js"
 
-const PlayerBrawlers = ({ playerData }) => {
+const PlayerBrawlers = ({ playerData, amountBrawlers }) => {
   const brawlers = playerData.brawlers
     ? playerData.brawlers.sort((a, b) => b.trophies - a.trophies)
     : []
-  const amountBrawlers = {
-    total: 44,
-    me: brawlers.length,
-  }
 
   return (
     <>
@@ -22,9 +18,7 @@ const PlayerBrawlers = ({ playerData }) => {
           </ContainerCards>
           <AmountBrawlers>
             Brawlers
-            <Number>
-              {" " + amountBrawlers.me + "/" + amountBrawlers.total}
-            </Number>
+            <Number>{` ${brawlers.length}/${amountBrawlers}`}</Number>
           </AmountBrawlers>
         </Container>
       )}

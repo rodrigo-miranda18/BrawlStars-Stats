@@ -1,10 +1,11 @@
 import api from "../../services/api"
 
 import ClubInfo from "../../components/ClubInfo"
+import ErrorPage from "../../components/ErrorPage"
 
 const ClubPerfil = ({ clubData }) => {
   if (!clubData) {
-    return <></>
+    return <ErrorPage />
   }
 
   return <ClubInfo clubData={clubData} />
