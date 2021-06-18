@@ -1,3 +1,5 @@
+import Head from "next/head"
+
 import BtnRankingPage from "../../components/BtnRankingPage"
 import Ranking from "../../components/Ranking"
 
@@ -5,6 +7,9 @@ import api from "../../services/api"
 
 const Players = ({ data }) => (
   <>
+    <Head>
+      <title>Leaderboard | Brawl Stars Stats</title>
+    </Head>
     <BtnRankingPage isPressed="Players" />
     <Ranking data={data} />
   </>

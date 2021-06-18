@@ -36,6 +36,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
             rel="stylesheet"
           />
+          <link rel="shortcut icon" href="/img/favicon.ico" type="image/svg" />
         </Head>
         <body>
           <Main />

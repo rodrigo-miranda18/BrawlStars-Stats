@@ -1,3 +1,5 @@
+import Head from "next/head"
+
 import BtnRankingPage from "../../../components/BtnRankingPage"
 import RankingBrawlers from "../../../components/RankingBrawlers"
 
@@ -5,7 +7,10 @@ import api from "../../../services/api"
 
 const Brawlers = ({ brawlers, ranking }) => (
   <>
-    <BtnRankingPage />
+    <Head>
+      <title>Leaderboard | Brawl Stars Stats</title>
+    </Head>
+    <BtnRankingPage isPressed="Brawlers" />
     <RankingBrawlers brawlers={brawlers} ranking={ranking} />
   </>
 )

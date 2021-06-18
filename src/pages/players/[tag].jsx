@@ -1,3 +1,5 @@
+import Head from "next/head"
+
 import api from "../../services/api"
 
 import PlayerInfo from "../../components/PlayerInfo"
@@ -11,6 +13,9 @@ const PlayerPerfil = ({ playerData, amountBrawlers }) => {
 
   return (
     <>
+      <Head>
+        <title>{playerData.name} | Brawl Stars Stats</title>
+      </Head>
       <PlayerInfo playerData={playerData} />
       <PlayerBrawlers amountBrawlers={amountBrawlers} playerData={playerData} />
     </>

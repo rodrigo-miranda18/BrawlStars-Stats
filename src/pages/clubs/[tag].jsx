@@ -1,3 +1,5 @@
+import Head from "next/head"
+
 import api from "../../services/api"
 
 import ClubInfo from "../../components/ClubInfo"
@@ -8,7 +10,14 @@ const ClubPerfil = ({ clubData }) => {
     return <ErrorPage />
   }
 
-  return <ClubInfo clubData={clubData} />
+  return (
+    <>
+      <Head>
+        <title>{clubData.name} | Brawl Stars Stats</title>
+      </Head>
+      <ClubInfo clubData={clubData} />
+    </>
+  )
 }
 
 export const getServerSideProps = async ctx => {

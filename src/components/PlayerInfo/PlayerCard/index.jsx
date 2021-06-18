@@ -1,5 +1,6 @@
+import { useRouter } from "next/router"
+
 import ExperienceBar from "../ExperienceBar"
-import Link from "next/link"
 import {
   Card,
   LeftSide,
@@ -19,14 +20,17 @@ import {
 } from "./styles.js"
 
 const PlayerCard = ({ playerData }) => {
+  const router = useRouter()
+
   const highestTrophiesBrawler = playerData.tag
     ? playerData.brawlers.sort((a, b) => b.trophies - a.trophies)
     : []
 
   const handleClick = async () => {
     const tagClub = playerData.club.tag.replace("#", "")
-    const response = await (await fetch("/api/" + tagClub + "/clubs")).json()
-    setClubData(response)
+    const href = `/clubs/${tagClub}`
+
+    router.push(href)
   }
 
   return (
@@ -44,14 +48,12 @@ const PlayerCard = ({ playerData }) => {
         </AvatarPerfil>
         <TagName>{playerData.tag}</TagName>
         <ExperienceBar expLevel={playerData.expLevel} />
-        <Link href="/clubs">
-          <Club onClick={() => (!playerData.club.name ? "" : handleClick())}>
-            <ClubIcon src="/img/cla-icon.png" />
-            <ClubName>
-              {!playerData.club.name ? "NO CLUB" : playerData.club.name}
-            </ClubName>
-          </Club>
-        </Link>
+        <Club onClick={() => (!playerData.club.name ? "" : handleClick())}>
+          <ClubIcon src="/img/cla-icon.png" />
+          <ClubName>
+            {!playerData.club.name ? "NO CLUB" : playerData.club.name}
+          </ClubName>
+        </Club>
       </LeftSide>
       <RightSide>
         <MainBrawlerImage image={highestTrophiesBrawler[0].id} />
