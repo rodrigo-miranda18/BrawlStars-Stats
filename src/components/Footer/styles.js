@@ -10,12 +10,6 @@ export const Container = styled.footer`
   margin-top: 150px;
 `
 
-export const Logo = styled.div`
-  > img {
-    width: 150px;
-  }
-`
-
 export const Links = styled.div`
   display: flex;
   flex-direction: row;
@@ -25,29 +19,24 @@ export const Links = styled.div`
   @media (max-width: 775px) {
     flex-direction: column;
   }
+
+  a {
+    margin-left: 20px;
+
+    @media (max-width: 775px) {
+      margin: 10px;
+    }
+  }
 `
 
-export const PlayStoreIcon = styled.img`
-  width: 130px;
-  margin: 0 15px;
-`
-export const AppStoreIcon = styled.img`
-  width: 100px;
-  height: 37px;
-  margin: 0 15px;
-`
-
-export const IconBox = styled.a`
+export const IconBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 40px;
   height: 40px;
+
   border-radius: 100%;
   background-color: black;
-  margin: 0 10px;
-
-  @media (max-width: 775px) {
-    margin: 10px;
-  }
 `

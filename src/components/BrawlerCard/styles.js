@@ -4,9 +4,14 @@ export const Card = styled.div`
   display: flex;
   border: 1px solid;
   width: 130px;
-  background-color: #44017E;
+  background-color: #44017e;
   margin: 0 0 10px 15px;
   flex-direction: column;
+
+  @media (max-width: 365px) {
+    width: 115px;
+    margin: 0 0 10px 8px;
+  }
 `
 
 export const Header = styled.div`
@@ -32,8 +37,11 @@ export const Name = styled.span`
 export const Main = styled.div`
   width: 130px;
   height: 85.8px;
-  background-image: url(/img/${props => props.imageId}.png);
-  background-size: cover;
+
+  @media (max-width: 365px) {
+    width: 115px;
+    height: 75.9px;
+  }
 `
 
 export const Footer = styled.div`
@@ -59,11 +67,6 @@ export const Amount = styled.div`
   display: flex;
   align-items: center;
   margin-top: 2px;
-`
-
-export const Icon = styled.img`
-  width: ${props => props.size.width};
-  height: ${props => props.size.height};
 `
 
 export const Value = styled.span`

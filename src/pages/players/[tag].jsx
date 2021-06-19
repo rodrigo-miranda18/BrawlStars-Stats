@@ -4,13 +4,8 @@ import api from "../../services/api"
 
 import PlayerInfo from "../../components/PlayerInfo"
 import PlayerBrawlers from "../../components/PlayerBrawlers"
-import ErrorPage from "../../components/ErrorPage"
 
 const PlayerPerfil = ({ playerData, amountBrawlers }) => {
-  if (!playerData) {
-    return <ErrorPage />
-  }
-
   return (
     <>
       <Head>
@@ -38,10 +33,7 @@ export const getServerSideProps = async ctx => {
     }
   } catch (err) {
     return {
-      props: {
-        playerData: null,
-        amountBrawlers: null,
-      },
+      notFound: true,
     }
   }
 }

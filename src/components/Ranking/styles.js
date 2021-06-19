@@ -46,8 +46,6 @@ export const PlayerInfo = styled.div`
 export const Avatar = styled.div`
   width: 35px;
   height: 35px;
-  background-image: url(/img/${props => props.img}.png);
-  background-size: contain;
 `
 
 export const Info = styled.div`
@@ -58,7 +56,7 @@ export const Info = styled.div`
   justify-content: center;
 `
 
-export const Name = styled.span`
+export const Name = styled.a`
   color: #fabc3b;
   font-size: 16px;
   text-decoration: none;

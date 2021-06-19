@@ -1,9 +1,11 @@
-import {Card,Value,Icon,Amount,Text} from "./styles.js"
+import Image from "next/image"
 
-const MiniCard = ({icon,text,value,color}) => (
+import { Card, Value, Icon, Amount, Text } from "./styles.js"
+
+const MiniCard = ({ icon, text, value, color, height }) => (
   <Card>
     <Value>
-      <Icon src={`/img/${icon}`}></Icon>
+      <Image width={38} height={height} src={`/img/${icon}`} alt={text} />
       <Amount color={color}>{value}</Amount>
     </Value>
     <Text>{text}</Text>

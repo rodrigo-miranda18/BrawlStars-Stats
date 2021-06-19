@@ -5,10 +5,10 @@ export const Card = styled.div`
   width: 200px;
   height: 300px;
   padding: 30px;
-  background-color: #1E0037;
+  background-color: #1e0037;
   flex-direction: column;
-  -webkit-box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.55); 
-  box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.55);
+  -webkit-box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.55);
+  box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.55);
 `
 
 export const Info = styled.div`
@@ -34,10 +34,6 @@ export const RightSide = styled.div`
   margin-top: 5px;
 `
 
-export const Logo = styled.img`
-  width: 55px;
-`
-
 export const Tag = styled.span`
   font-size: 12px;
   color: white;
@@ -54,12 +50,8 @@ export const Trophies = styled.div`
   margin-top: 3px;
 `
 
-export const Icon = styled.img`
-  width: 23px;
-`
-
 export const Value = styled.span`
-  color: #FABC3B;
+  color: #fabc3b;
   font-size: 13px;
   margin-left: 3px;
 `
@@ -87,15 +79,10 @@ export const Description = styled.span`
 export const Amount = styled.div`
   display: flex;
   align-items: center;
-  
-`
-
-export const IconTrophies = styled.img`
-  width: 30px;
 `
 
 export const AmountTrophies = styled.span`
-  color: #FABC3B;
+  color: #fabc3b;
   font-size: 18px;
   margin-left: 5px;
 `
@@ -107,6 +94,6 @@ export const Name = styled.span`
 `
 
 export const NameType = styled.span`
-  color: #0DF86B;
+  color: #0df86b;
   font-size: 18px;
 `

@@ -1,20 +1,19 @@
+import Image from "next/image"
+
 import {
   Card,
   Info,
   Main,
   LeftSide,
   RightSide,
-  Logo,
   Tag,
   Title,
   Trophies,
-  Icon,
   Value,
   RequiredTrophies,
   Type,
   Description,
   Amount,
-  IconTrophies,
   AmountTrophies,
   Name,
   NameType,
@@ -27,13 +26,23 @@ const ClubCard = ({ clubData }) => {
         <Card>
           <Info>
             <LeftSide>
-              <Logo src="/img/cla-icon.png" />
+              <Image
+                width={55}
+                height={60}
+                src="/img/cla-icon.png"
+                alt={clubData.name}
+              />
               <Tag>{clubData.tag}</Tag>
             </LeftSide>
             <RightSide>
               <Title>{clubData.name}</Title>
               <Trophies>
-                <Icon src="/img/ranking.png" />
+                <Image
+                  width={23}
+                  height={17.1}
+                  src="/img/ranking.png"
+                  alt="Trophies"
+                />
                 <Value>{clubData.trophies}</Value>
               </Trophies>
             </RightSide>
@@ -41,7 +50,12 @@ const ClubCard = ({ clubData }) => {
           <Main>
             <RequiredTrophies>
               <Amount>
-                <IconTrophies src="/img/ranking.png" />
+                <Image
+                  width={30}
+                  height={22.3}
+                  src="/img/ranking.png"
+                  alt="Trophies"
+                />
                 <AmountTrophies>{clubData.requiredTrophies}</AmountTrophies>
               </Amount>
               <Name>Required Trophies</Name>

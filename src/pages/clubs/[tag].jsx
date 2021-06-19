@@ -3,13 +3,8 @@ import Head from "next/head"
 import api from "../../services/api"
 
 import ClubInfo from "../../components/ClubInfo"
-import ErrorPage from "../../components/ErrorPage"
 
 const ClubPerfil = ({ clubData }) => {
-  if (!clubData) {
-    return <ErrorPage />
-  }
-
   return (
     <>
       <Head>
@@ -34,9 +29,7 @@ export const getServerSideProps = async ctx => {
     }
   } catch (err) {
     return {
-      props: {
-        clubData: null,
-      },
+      notFound: true,
     }
   }
 }

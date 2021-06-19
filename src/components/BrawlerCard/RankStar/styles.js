@@ -7,10 +7,6 @@ export const Star = styled.div`
   z-index: 1;
 `
 
-export const StarImage = styled.img`
-  width: 28px;
-`
-
 export const Rank = styled.span`
   color: white;
   position: absolute;

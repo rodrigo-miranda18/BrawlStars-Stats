@@ -1,23 +1,32 @@
+import Image from "next/image"
+
 import {
-  Bar, 
+  Bar,
   ContainerStar,
   StarImage,
   ExperienceNumber,
   ExperienceProgressBar,
   BlueBar,
-  BlackBar
+  BlackBar,
 } from "./styles.js"
 
-const ExperienceBar = ({expLevel}) => {
-  return(
+const ExperienceBar = ({ expLevel }) => {
+  return (
     <Bar>
       <ContainerStar>
-        <StarImage src="/img/experience-star.png"/>
+        <StarImage>
+          <Image
+            width={24}
+            height={24}
+            src="/img/experience-star.png"
+            alt="Brawler XP level"
+          />
+        </StarImage>
         <ExperienceNumber>{expLevel}</ExperienceNumber>
       </ContainerStar>
       <ExperienceProgressBar>
-        <BlueBar/>
-        <BlackBar/>
+        <BlueBar />
+        <BlackBar />
       </ExperienceProgressBar>
     </Bar>
   )

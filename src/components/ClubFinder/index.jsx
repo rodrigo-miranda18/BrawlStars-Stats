@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
+import Image from "next/image"
 
 import {
   Container,
@@ -9,7 +10,7 @@ import {
   Input,
   Button,
   ImageButton,
-  Image,
+  ImageContainer,
 } from "../PlayerFinder/styles.js"
 
 const ClubFinder = () => {
@@ -28,18 +29,44 @@ const ClubFinder = () => {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <Title>Type your Tag Club :</Title>
-        <Field>
-          <Input
-            onChange={e => setTag(e.target.value)}
-            placeholder="#XXXXXXXX"
-          />
-          <Button>
-            <ImageButton src="/img/icon.png" />
-          </Button>
-        </Field>
+        <div>
+          <Title>Type your Tag Club :</Title>
+          <Field>
+            <Input
+              onChange={e => setTag(e.target.value)}
+              placeholder="#XXXXXXXX"
+            />
+            <Button>
+              <ImageButton src="/img/icon.png" />
+            </Button>
+          </Field>
+        </div>
       </Form>
-      <Image src="/img/background-club.png" />
+      <ImageContainer>
+        <div>
+          <Image
+            unoptimized={true}
+            width={310}
+            height={335}
+            alt="Brawler"
+            src="/img/16000016-brawler.png"
+          />
+          <Image
+            unoptimized={true}
+            width={310}
+            height={335}
+            alt="Brawler"
+            src="/img/16000020-brawler.png"
+          />
+          <Image
+            unoptimized={true}
+            width={325}
+            height={325}
+            alt="Brawler"
+            src="/img/16000025-brawler.png"
+          />
+        </div>
+      </ImageContainer>
     </Container>
   )
 }

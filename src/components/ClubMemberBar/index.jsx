@@ -1,4 +1,5 @@
-import { useRouter } from "next/router"
+import Link from "next/link"
+import Image from "next/image"
 
 import {
   Container,
@@ -14,24 +15,27 @@ import {
 } from "./styles.js"
 
 const ClubMemberBar = ({ data, id }) => {
-  const router = useRouter()
-
-  const handleClick = () => {
-    const tagPlayer = data.tag.replace("#", "")
-    const href = `/players/${tagPlayer}`
-
-    router.push(href)
-  }
+  const playerTag = data.tag.replace("#", "")
 
   return (
     <Container>
       <LeftSide>
         <Id>{id}</Id>
-        <Avatar image={`/img/${data.icon.id}.png`}></Avatar>
-        <Info onClick={handleClick}>
-          <Name>{data.name}</Name>
-          <Role>{data.role}</Role>
-        </Info>
+        <Avatar>
+          <Image
+            objectFit="contain"
+            width={40}
+            height={40}
+            src={`/img/${data.icon.id}.png`}
+            alt={data.name}
+          />
+        </Avatar>
+        <Link href={`/players/${playerTag}`}>
+          <Info>
+            <Name>{data.name}</Name>
+            <Role>{data.role}</Role>
+          </Info>
+        </Link>
       </LeftSide>
       <RightSide>
         <Icon src="/img/ranking.png"></Icon>

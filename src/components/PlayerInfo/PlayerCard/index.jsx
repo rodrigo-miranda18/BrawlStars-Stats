@@ -1,4 +1,5 @@
-import { useRouter } from "next/router"
+import Link from "next/link"
+import Image from "next/image"
 
 import ExperienceBar from "../ExperienceBar"
 import {
@@ -10,53 +11,73 @@ import {
   NameAndTrophies,
   Name,
   Trophies,
-  TrophieImage,
   TrophiesAmount,
   TagName,
   Club,
-  ClubIcon,
   ClubName,
   MainBrawlerImage,
 } from "./styles.js"
 
 const PlayerCard = ({ playerData }) => {
-  const router = useRouter()
+  const href = playerData.club.tag
+    ? `/clubs/${playerData.club.tag.replace("#", "")}`
+    : `/players/${playerData.tag.replace("#", "")}`
 
   const highestTrophiesBrawler = playerData.tag
     ? playerData.brawlers.sort((a, b) => b.trophies - a.trophies)
     : []
 
-  const handleClick = async () => {
-    const tagClub = playerData.club.tag.replace("#", "")
-    const href = `/clubs/${tagClub}`
-
-    router.push(href)
-  }
-
   return (
     <Card>
       <LeftSide>
         <AvatarPerfil>
-          <Avatar image={playerData.icon.id} />
+          <Avatar>
+            <Image
+              objectFit="contain"
+              width={70}
+              height={70}
+              src={`/img/${playerData.icon.id}.png`}
+              alt="Player Profile Avatar"
+            />
+          </Avatar>
           <NameAndTrophies>
             <Name>{playerData.name}</Name>
             <Trophies>
-              <TrophieImage src="/img/ranking.png" />
+              <Image
+                width={20}
+                height={15}
+                src="/img/ranking.png"
+                alt="Player Trophies Brawl Stars"
+              />
               <TrophiesAmount>{playerData.trophies}</TrophiesAmount>
             </Trophies>
           </NameAndTrophies>
         </AvatarPerfil>
         <TagName>{playerData.tag}</TagName>
         <ExperienceBar expLevel={playerData.expLevel} />
-        <Club onClick={() => (!playerData.club.name ? "" : handleClick())}>
-          <ClubIcon src="/img/cla-icon.png" />
-          <ClubName>
-            {!playerData.club.name ? "NO CLUB" : playerData.club.name}
-          </ClubName>
-        </Club>
+        <Link href={href}>
+          <Club>
+            <Image
+              width={20}
+              height={21.8}
+              src="/img/cla-icon.png"
+              alt={playerData.club.name}
+            />
+            <ClubName>
+              {!playerData.club.name ? "NO CLUB" : playerData.club.name}
+            </ClubName>
+          </Club>
+        </Link>
       </LeftSide>
       <RightSide>
-        <MainBrawlerImage image={highestTrophiesBrawler[0].id} />
+        <Image
+          objectFit="contain"
+          unoptimized={true}
+          width={150}
+          height={150}
+          src={`/img/${highestTrophiesBrawler[0].id}-brawler.png`}
+          alt={highestTrophiesBrawler[0].name}
+        />
       </RightSide>
     </Card>
   )

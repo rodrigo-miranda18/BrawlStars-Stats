@@ -1,4 +1,5 @@
-import { useRouter } from "next/router"
+import Link from "next/link"
+import Image from "next/image"
 
 import {
   Container,
@@ -16,15 +17,6 @@ import {
 } from "./styles.js"
 
 const Ranking = ({ data }) => {
-  const router = useRouter()
-
-  const handleClick = (tag, isClub) => {
-    const tagName = tag.replace("#", "")
-    const href = isClub ? `/clubs/${tagName}` : `/players/${tagName}`
-
-    router.push(href)
-  }
-
   return (
     <Container>
       {data.map((item, index) => (
@@ -32,15 +24,29 @@ const Ranking = ({ data }) => {
           <LeftSide>
             <Id>{index + 1}</Id>
             <PlayerInfo>
-              {item.icon ? <Avatar img={item.icon.id} /> : <></>}
+              {item.icon ? (
+                <Avatar>
+                  <Image
+                    objectFit="contain"
+                    width={35}
+                    height={35}
+                    src={`/img/${item.icon.id}.png`}
+                    alt={item.name}
+                  />
+                </Avatar>
+              ) : (
+                <></>
+              )}
               <Info>
-                <Name
-                  onClick={() =>
-                    handleClick(item.tag, item.club ? false : true)
+                <Link
+                  href={
+                    item.club
+                      ? `/players/${item.tag.replace("#", "")}`
+                      : `/clubs/${item.tag.replace("#", "")}`
                   }
                 >
-                  {item.name}
-                </Name>
+                  <Name>{item.name}</Name>
+                </Link>
                 <Club>
                   {item.club ? item.club.name : item.memberCount + "/100"}
                 </Club>

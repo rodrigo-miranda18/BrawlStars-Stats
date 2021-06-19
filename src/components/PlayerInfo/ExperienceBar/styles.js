@@ -12,8 +12,8 @@ export const ContainerStar = styled.div`
   align-items: center;
 `
 
-export const StarImage = styled.img`
-  width: 24px;
+export const StarImage = styled.div`
+  display: flex;
   z-index: 1;
 `
 
@@ -21,7 +21,7 @@ export const ExperienceNumber = styled.span`
   color: white;
   font-size: 10px;
   position: absolute;
-  
+
   z-index: 1;
 `
 
@@ -34,7 +34,7 @@ export const ExperienceProgressBar = styled.div`
 `
 
 export const BlueBar = styled.div`
-  background-color: #5CD6FF;
+  background-color: #5cd6ff;
   width: 80%;
 `
 
