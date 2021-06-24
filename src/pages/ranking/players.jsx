@@ -16,12 +16,18 @@ const Players = ({ data }) => (
 )
 
 export const getServerSideProps = async () => {
-  const response = await api.get("/rankings/1/players")
+  try {
+    const response = await api.get("/rankings/1/players")
 
-  return {
-    props: {
-      data: response.data.items,
-    },
+    return {
+      props: {
+        data: response.data.items,
+      },
+    }
+  } catch (err) {
+    return {
+      notFound: true,
+    }
   }
 }
 

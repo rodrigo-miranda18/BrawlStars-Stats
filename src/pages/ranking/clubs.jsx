@@ -16,12 +16,18 @@ const Club = ({ data }) => (
 )
 
 export const getStaticProps = async () => {
-  const response = await api.get("/rankings/1/clubs")
+  try {
+    const response = await api.get("/rankings/1/clubs")
 
-  return {
-    props: {
-      data: response.data.items,
-    },
+    return {
+      props: {
+        data: response.data.items,
+      },
+    }
+  } catch (err) {
+    return {
+      notFound: true,
+    }
   }
 }
 
