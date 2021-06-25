@@ -39,7 +39,7 @@ export const RightSide = styled.div`
   @media (max-width: 630px) {
     display: ${props => (props.showLinks ? "flex" : "none")};
     position: absolute;
-    top: 17vh;
+    top: 90px;
     align-items: center;
     flex-direction: column;
     width: 100%;
