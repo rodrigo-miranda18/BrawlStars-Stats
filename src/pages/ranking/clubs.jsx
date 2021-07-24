@@ -15,7 +15,7 @@ const Club = ({ data }) => (
   </>
 )
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   try {
     const response = await api.get("/rankings/1/clubs")
 
