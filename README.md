@@ -3,52 +3,27 @@
     Brawl Stars Stats
 </h1>
 
-<hr>
-
-## Sobre
-
-Aplicação que fornece estatísticas do famoso jogo mobile Brawl Stars .
-
-O usuário consegue buscar por dados de sua conta , obtendo o número de troféus , vitórias e até visualizar seus Brawlers , entre outros dados .
+<p align="center">
+    Brawl Stars Stats is an app that provides stats of Mobile Game Brawl Stars
+</p>
 
 <br>
 
 <img src="./public/github/find-player.gif"/>
 
 <br>
-
-Além disso o usuário pode buscar por Clubes também , obtendo a quantidade de troféus assim como todos seus membros .
-
-<br>
-<br>
-
-<img src="./public/github/find-club.gif"/>
-
-<br>
-
-Na aba Ranking , é possível visualizar o maior número de troféus da season dos Players , dos Clubes , e dos Brawlers .
-
-Ranking e Clubs :
-
 <br>
 
 <img src="./public/github/ranking-player-club.gif">
 
 <br>
-
-Brawlers :
-
 <br>
 
 <img src="./public/github/ranking-brawlers.gif">
 
-<br>
-
-A api utilizada neste projeto foi a <a href="https://developer.brawlstars.com/#/">Brawl Stars API</a> .
-
 <hr>
 
-## Tecnologias
+## Tecnologies
 
 <br>
 
@@ -57,3 +32,56 @@ A api utilizada neste projeto foi a <a href="https://developer.brawlstars.com/#/
 - ✔️ Styled-Components
 - ✔️ Axios
 - ✔️ React Icons
+
+<hr>
+
+## 💻 Getting Started
+
+<br>
+
+### Requirements
+
+- You need to install <a src="https://nodejs.org/en/download/">Node.js</a> to run this project.
+- You need to create an account on <a src="https://developer.brawlstars.com/#/">Brawl Stars Official Api</a>, and then create a <a src="https://developer.brawlstars.com/#/new-key">key</a> with your IP address. 
+
+**Clone the project and access the folder**
+
+```bash
+git clone https://github.com/rodrigo-miranda18/BrawlStars-Stats.git && cd brawlstars-stats
+```
+
+**Follow the steps below**
+
+```bash
+# Run this command to open that file on your text editor
+
+code src/services/api.js .
+```
+
+<br>
+<p>Copy the Token of your key and replace on file.</p>
+<div>
+    <img src="./public/github/update-token.gif">
+</div>
+<br>
+
+```bash
+# Install the dependencies
+npm install
+# or 
+yarn install
+
+# Build project
+npm run build
+# or
+yarn build
+
+# Run project
+npm start
+# ou
+yarn start
+
+# The app will be available for access on your browser at http://localhost:3000
+```
+
+
