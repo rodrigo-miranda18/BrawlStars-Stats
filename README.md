@@ -7,25 +7,15 @@
     Brawl Stars Stats is an app that provides stats of Mobile Game Brawl Stars
 </p>
 
-<br>
-
 <img src="./public/github/find-player.gif"/>
 
-<br>
-<br>
-
 <img src="./public/github/ranking-player-club.gif">
-
-<br>
-<br>
 
 <img src="./public/github/ranking-brawlers.gif">
 
 <hr>
 
 ## Tecnologies
-
-<br>
 
 - ✔️ Next JS
 - ✔️ Context API
@@ -36,8 +26,6 @@
 <hr>
 
 ## 💻 Getting Started
-
-<br>
 
 ### Requirements
 
