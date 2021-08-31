@@ -29,8 +29,8 @@
 
 ### Requirements
 
-- You need to install <a src="https://nodejs.org/en/download/">Node.js</a> to run this project.
-- You need to create an account on <a src="https://developer.brawlstars.com/#/">Brawl Stars Official Api</a>, and then create a <a src="https://developer.brawlstars.com/#/new-key">key</a> with your IP address. 
+- You need to install <a href="https://nodejs.org/en/download/">Node.js</a> to run this project.
+- You need to create an account on <a href="https://developer.brawlstars.com/#/">Brawl Stars Official Api</a>, and then create a <a href="https://developer.brawlstars.com/#/new-key">key</a> with your IP address. 
 
 **Clone the project and access the folder**
 
